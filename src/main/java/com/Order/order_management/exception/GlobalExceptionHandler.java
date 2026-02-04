@@ -15,4 +15,8 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String>handleUserNotExist(InvalidCredentialsException ex){
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
     }
+    @ExceptionHandler(ProductNotExistException.class)
+    public ResponseEntity<String>handleProductNotExist(ProductNotExistException ex){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
 }
