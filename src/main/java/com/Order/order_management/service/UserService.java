@@ -23,12 +23,12 @@ public class UserService {
       if(userRepository.existsByUsername(requestRegister.getUsername())){
          throw new UserAlreadyExistsException("username Already exist");
       }
-     User user = new User();
+      User user = new User();
       user.setUsername(requestRegister.getUsername());
       user.setEmail(requestRegister.getEmail());
       user.setPassword(requestRegister.getPassword());
       user.setRole(Role.USER);
-
+      userRepository.save(user);
       return new ResponseRegister(user.getId(), user.getUsername(),"Succesfully user registered");
 
 

@@ -1,14 +1,15 @@
 package com.Order.order_management.dto;
 
+
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+
 @Data
 @AllArgsConstructor
-public class RequestRegister {
-
-    private String username ;
-    private String password ;
-    @Email(message = "Invalid email format")
+public class RequestLogin {
+    private String username;
+    @Email(message = "Email is not Valid")
     private String email;
+    private String password;
 }

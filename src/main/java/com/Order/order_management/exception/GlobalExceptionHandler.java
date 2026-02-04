@@ -11,4 +11,8 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String>handleUserAlreadyExist(UserAlreadyExistsException ex){
         return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
     }
+    @ExceptionHandler(InvalidCredentialsException.class)
+    public ResponseEntity<String>handleUserNotExist(InvalidCredentialsException ex){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
 }
