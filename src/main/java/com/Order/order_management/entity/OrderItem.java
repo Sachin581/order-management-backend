@@ -29,6 +29,6 @@ public class OrderItem {
     @Column(nullable = false)
     private Integer quantity;
 
-    @Column(nullable = false)
-    private Long priceAtPurchase;
+//  @Column(nullable = false)
+//    private Long priceAtPurchase;
 }

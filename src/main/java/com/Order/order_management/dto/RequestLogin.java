@@ -9,7 +9,9 @@ import lombok.Data;
 @AllArgsConstructor
 public class RequestLogin {
     private String username;
+
     @Email(message = "Email is not Valid")
     private String email;
+
     private String password;
 }
